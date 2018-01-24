@@ -97,3 +97,53 @@ Then initialize your project:
 cd news-app
 firebase init
 ```
+
+For now, select only the "Hosting" option and connect it to the Firebase project set up earlier. Change "public" target to point to the "build/es5-bundled" directory but keep other responses as default.
+
+```
+? Which Firebase CLI features do you want to setup for this folder? Press Space to select featur
+es, then Enter to confirm your choices. Hosting: Configure and deploy Firebase Hosting sites
+
+=== Project Setup
+
+First, let's associate this project directory with a Firebase project.
+You can create multiple project aliases by running firebase use --add, 
+but for now we'll just set up a default project.
+
+? Select a default Firebase project for this directory: news-app-polymer (news-app-polymer)
+
+=== Hosting Setup
+
+Your public directory is the folder (relative to your project directory) that
+will contain Hosting assets to be uploaded with firebase deploy. If you
+have a build process for your assets, use your build's output directory.
+
+? What do you want to use as your public directory? build/es5-bundled
+? Configure as a single-page app (rewrite all urls to /index.html)? No
+✔  Wrote build/es5-bundled/404.html
+? File build/es5-bundled/index.html already exists. Overwrite? No
+i  Skipping write of build/es5-bundled/index.html
+i  Writing configuration info to firebase.json...
+i  Writing project information to .firebaserc...
+
+✔  Firebase initialization complete!
+```
+
+Now deploy to Firebase.
+
+```
+firebase deploy
+
+=== Deploying to 'news-app-polymer'...
+
+i  deploying hosting
+i  hosting: preparing build/es5-bundled directory for upload...
+✔  hosting: 138 files uploaded successfully
+
+✔  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/news-app-polymer/overview
+Hosting URL: https://news-app-polymer.firebaseapp.com
+```
+
+Vist the site to make sure the app is deployed correctly.
