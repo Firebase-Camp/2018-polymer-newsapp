@@ -147,3 +147,34 @@ Hosting URL: https://news-app-polymer.firebaseapp.com
 ```
 
 Vist the site to make sure the app is deployed correctly.
+
+## 4. Explore the Architecture
+
+This is full-featured Progressive Web App generated using the [Polymer App Toolbox](https://www.polymer-project.org/2.0/toolbox/). This means it has the following capabilities out-of-the-box:
+ * Component-based architecture
+ * Using web components (and Polymer)
+ * Responsive design (using [app-layout elements](https://www.webcomponents.org/element/PolymerElements/app-layout))
+ * Modular routing (using [app-route elements](https://www.webcomponents.org/element/PolymerElements/app-route))
+ * Localization (with [app-localize elements](https://www.webcomponents.org/element/PolymerElements/app-localize-behavior))
+ * Turnkey support for local storage (with [app-storage elements](https://www.webcomponents.org/element/PolymerElements/app-storage) which can include both indexeddb and firebase options)
+ * Offline caching as a progressive enhancement using service workers
+ * Build tooling to support both unbundled app delivery (HTTP/2) and bundled delivery (HTTP/1)
+
+Features are additive. You can start with simple responsive design layout, then start adding in other pieces as you go (e.g., routing, localization) to get better support.
+
+This [case study](https://news-docs.polymer-project.org/docs/case-study.html) walks through the key features.
+
+### 4.1 App Structure
+
+### 4.2 Views and Routing
+
+### 4.3 Routing and Data Binding
+
+### 4.4 Resource URLs
+
+### 4.5 Displaying Ads
+
+### 4.6 Accelerated Mobile Pages (AMP) [Version](https://github.com/Polymer/news/tree/amp)
+
+### 4.7 [Customization](https://news-docs.polymer-project.org/docs/using.html) and [Theming](https://news-docs.polymer-project.org/docs/theming.html)
+
