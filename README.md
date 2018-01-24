@@ -176,5 +176,86 @@ This [case study](https://news-docs.polymer-project.org/docs/case-study.html) wa
 
 ### 4.6 Accelerated Mobile Pages (AMP) [Version](https://github.com/Polymer/news/tree/amp)
 
-### 4.7 [Customization](https://news-docs.polymer-project.org/docs/using.html) and [Theming](https://news-docs.polymer-project.org/docs/theming.html)
+## 5.0 [Customization](https://news-docs.polymer-project.org/docs/using.html) 
+
+### 5.1 [Change the Name of your Site](https://news-docs.polymer-project.org/docs/using.html#step-1-change-the-name-of-your-site)
+
+> Edit index.html
+
+Change the newspaper's "title" in the three locations specified. 
+_Tip: When rebuilding and serving the site, open in an Anonymous browser if you find older versions were cached_
+ 
+### 5.2 [Setup Categories for your content](https://news-docs.polymer-project.org/docs/using.html#step-2-set-up-categories-for-your-content)
+
+> Edit news-data.html
+
+You can change the number and focus of the categories. Simply add, remove or modify the ```{name: 'lorem', title: 'Lorem Ipsum'}``` items in the _categoryList_
+
+I am going to update this to reflect the availability of the newspaper in six languages: _Chinese, Arabic, Russian_ and _French, Spanish, English_. The latter use the Roman or Latin alphabet (e.g, modern day english letters) while the former use different systems.
+
+> Edit news-app.html
+
+Update the default route to reflect the default topic name you want to route to (if topics were changed.) In my case, I will update to have the "english" page be the default route.
+
+> Create data/<topic.json> files
+
+For the new topics you identified, create appropriate topic-name.json files in the "data/" directory. In my case I simply renamed the existing ones to reflect the names so I would have content showing. 
+
+_TODO: Actually update the content in these files or create new files and update paths in news-data.html to reflect new locations._
+
+Here is an example of what each item looks like, and here is the [specification](https://news-docs.polymer-project.org/docs/categories.html) indicating how it's interpreted.
+
+```
+[
+ {
+    "title": "Experience virtual reality art in your browser",
+    "time": "Tue, 19 Apr 2016 18:50:00 +0000",
+    "author": "Jeff Nusz",
+    "category": "Google Chrome",
+    "id": "experience-virtual-reality-art-in-your",
+    "link": "https://blog.google/products/chrome/experience-virtual-reality-art-in-your/",
+    "imgSrc": "images/experience-virtual-reality-art-in-your.jpg",
+    "placeholder": "data:image/jpeg;base64,/9j/4QAYRXhpZg...AT8Qk3//2Q==",
+    "summary": "Virtual Art Sessions lets you observe six world-renowned artists as they develop blank canvases into beautiful works of art using Tilt Brush.",
+    "contentLength": 3584
+  },
+
+  {
+    "title": "It takes a teacher",
+    ...
+  }
+  ...
+]
+```
+
+Note that while the current install is simply using the "data/" directory to hold static content files, we can subsequently update this to fetch all that information (json) from a remote database (e.g., Firebase) 
+
+_TODO: move category.json files to ```/news-app/categories/<category.json>``` on Firebase_
+
+> Add your html files and images.
+
+The above "data" reflects the succinct metadata for an article that might be used in top-level summary cards. The actual long-form articles (HTML) and images (static files) are located in articles/ and images/ respectively.
+
+Articles are simple HTML pages with your content enclosed in a container with a ```content``` class.
+
+```
+<body>
+  <div class="content">
+    <div>
+    ...
+    </div>
+  </div>
+</body>
+```
+
+_TODO: Create new articles, images - delete the old/unused ones_
+
+That's it - build and redeploy as before.
+
+```
+polymer build
+firebase deploy
+```
+
+## 6.0 [Theming](https://news-docs.polymer-project.org/docs/theming.html)
 
